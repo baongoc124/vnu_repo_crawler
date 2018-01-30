@@ -70,7 +70,7 @@ class TrungTmThngTinThVinLibraryAndInformatItem(PortiaItem):
     )
 
 class PdfItem(scrapy.Item):
-    article_id = scrapy.Field()
+    article_url = scrapy.Field()
     view_urls = scrapy.Field()
     file_urls = scrapy.Field()
     files = scrapy.Field()

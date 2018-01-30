@@ -3,6 +3,7 @@ from scrapy.loader import ItemLoader
 from scrapy.utils.response import get_base_url
 import scrapy
 import bpdb
+import hashlib
 
 from .starturls import FeedGenerator, FragmentGenerator
 
@@ -58,7 +59,7 @@ class BasePortiaSpider(CrawlSpider):
                     if item.get('view_url'):
                         view_urls = item['view_url'].split()
                         for u in view_urls:
-                            yield scrapy.Request(u, cookies={}, meta={'dont_merge_cookies': True})
+                            yield scrapy.Request(u, meta={'article_url': item['uri'], 'dont_cache': True}, callback=self.parse_pdf)
                     yield item
                 break
 
