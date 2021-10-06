@@ -34,7 +34,7 @@ regex==2018.1.10
 requests==2.18.4
 ruamel.ordereddict==0.4.13
 ruamel.yaml==0.15.35
-Scrapy==1.5.0
+Scrapy==1.8.1
 service-identity==17.0.0
 six==1.11.0
 Twisted==17.9.0
